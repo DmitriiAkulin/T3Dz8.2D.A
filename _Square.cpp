@@ -7,6 +7,7 @@ _Square::_Square(int a) :_Rectangle() {
     this->b = a;
     this->c = a;
     this->d = a;
+    if (a != b || a!=c|| a!=d) throw MyExeption{ "Квадрат. Ошибка Создания фигуры: Стороны не равны" };    
 }
 _Square::_Square() : _Square(20) {}
 

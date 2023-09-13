@@ -24,10 +24,11 @@ using std::string;
 int main()
 {
     setlocale(LC_ALL, "rus");
-
-    Figure figure;
-    Figure* pointer_t;
-    figure.print_info();
+    std::cout << "Ошибку оставил только в ромбе - последний в очереди, проверил все фигуры по порядку \n" ;
+    try{
+         Figure figure;  
+         Figure* pointer_t;
+         figure.print_info();
     
     // треугольники    
     Triangle triangle;    pointer_t = &triangle;    pointer_t->print_info();      
@@ -41,6 +42,11 @@ int main()
     _Square squar; pointer_t = &squar; pointer_t->print_info();   
     Parallelogram parall; pointer_t = &parall; pointer_t->print_info();    
     Romb romb; pointer_t = &romb; pointer_t->print_info();
+    }
+    catch (MyExeption ex)
+    {
+        std::cout << ex.getMessage() << std::endl << std::endl;
+    };
 
     return 0;
 }
